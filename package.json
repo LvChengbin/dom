@@ -1,6 +1,6 @@
 {
   "name": "@lvchengbin/dom",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "Utils for dom.",
   "keywords": [
     "dom",
@@ -12,6 +12,9 @@
     "build": "rollup -c",
     "prepublish": "npm run build",
     "test": "karma start",
+    "test-contains" : "karma start --file=test/contains.spec.js",
+    "test-dom-events" : "karma start --file=test/dom-events.spec.js",
+    "test-delegate" : "karma start --file=test/delegate.spec.js",
     "lint": "eslint ./ --cache --ignore-path .eslintignore",
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
   },
@@ -44,7 +47,6 @@
     "rollup-plugin-node-resolve": "^3.0.2"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0-beta.39",
     "@lvchengbin/is": "0.0.9"
   }
 }
