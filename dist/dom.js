@@ -43,12 +43,7 @@ var remove = node => {
     parentNode && parentNode.removeChild( node );
 }
 
-var isString = str => typeof str === 'string' || str instanceof String;
-
 var replace = ( node, oldNode ) => {
-    if( isString( node ) ) {
-        node = create( node );
-    }
     const parentNode = oldNode.parentNode;
     return parentNode && parentNode.replaceChild( node, oldNode );
 };

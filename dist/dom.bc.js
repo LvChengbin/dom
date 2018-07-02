@@ -47,15 +47,7 @@ var remove = (function (node) {
   parentNode && parentNode.removeChild(node);
 });
 
-var isString = (function (str) {
-  return typeof str === 'string' || str instanceof String;
-});
-
 var replace = (function (node, oldNode) {
-  if (isString(node)) {
-    node = create(node);
-  }
-
   var parentNode = oldNode.parentNode;
   return parentNode && parentNode.replaceChild(node, oldNode);
 });
