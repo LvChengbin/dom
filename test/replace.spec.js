@@ -13,11 +13,4 @@ describe( 'replace', () => {
         replace( create( '<i></i>' ), node.querySelector( 'p' ) );
         expect( node.firstChild.nodeName ).toEqual( 'I' );
     } );
-
-
-    it( 'replace by a fragment', () => {
-        const node = create( '<div><p></p></div>' ).firstChild;
-        replace( '<i></i>', node.querySelector( 'p' ) );
-        expect( node.firstChild.nodeName ).toEqual( 'I' );
-    } );
 } );

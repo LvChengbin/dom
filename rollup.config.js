@@ -1,6 +1,5 @@
-import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+import buble from 'rollup-plugin-buble';
 
 export default [ {
     input : 'src/index.js',
@@ -18,12 +17,15 @@ export default [ {
     input : 'src/index.js',
     plugins : [
         resolve( {
+            module : true,
             jsnext : true
         } ),
-        commonjs( {
-            sourceMap : false
-        } ),
-        babel()
+        buble( {
+            transforms : {
+                arrow : true,
+                dangerousForOf : true
+            }
+        } )
     ],
     output : [
         { file : 'dist/dom.bc.js', format : 'umd', name : 'dom' }
